@@ -1,0 +1,60 @@
+<template>
+<b-container>
+    <b-button
+        @click="Challenge()"
+        class="btn-block"
+        variant="outline-primary"
+        >Challenge
+    </b-button>
+    <b-button
+        @click="ChallengeDaily()"
+        class="btn-block"
+        variant="outline-primary"
+        >ChallengeDaily
+    </b-button>
+    <b-button
+        @click="ML2()"
+        class="btn-block"
+        variant="outline-primary"
+        >ML2
+    </b-button>
+    <b-button
+        @click="MorningNotification()"
+        class="btn-block"
+        variant="outline-primary"
+        >MorningNotification
+    </b-button>
+    <b-button
+        @click="UsageNotification()"
+        class="btn-block"
+        variant="outline-primary"
+        >UsageNotification
+    </b-button>
+</b-container>
+</template>
+<script>
+import {BContainer,BButton} from 'bootstrap-vue'
+export default {
+    components:{
+        BContainer,
+        BButton
+    },
+    methods: {
+        Challenge(){
+            this.axios.get('https://www.gadgetbuck.com/api/presentcontroller/Challenge')
+        },
+        ChallengeDaily(){
+            this.axios.get('https://www.gadgetbuck.com/api/presentcontroller/ChallengeDaily')
+        },
+        ML2(){
+            this.axios.get('https://www.gadgetbuck.com/api/presentcontroller/ML2')
+        },
+        MorningNotification(){
+            this.axios.get('https://www.gadgetbuck.com/api/presentcontroller/MorningNotification')
+        },
+        UsageNotification(){
+            this.axios.get('https://www.gadgetbuck.com/api/presentcontroller/UsageNotification')
+        }
+    }
+}
+</script>
